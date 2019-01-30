@@ -14,4 +14,18 @@ public class Startup
             options.AreaViewLocationFormats.Add("/Views/ControllersViews/Shared/{0}.cshtml");
         });
     }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        app.UseMvc(routes =>
+        {
+            routes.MapRoute(
+                name: "areaRoute",
+                template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+            routes.MapRoute(
+                name: "default",
+                template: "{controller=Dashboard}/{action=Index}/{id?}");
+        });
+    }
 }
