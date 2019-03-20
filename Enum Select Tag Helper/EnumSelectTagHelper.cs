@@ -22,7 +22,7 @@ public class EnumSelectTagHelper : TagHelper
         var enumDictionary = Functions.GetEnumList(Enum);
         foreach (var enumItem in enumDictionary)
         {
-            optionsStringBuilder.Append($"<option value\"{enumItem.Key}\">{enumItem.Value}</option>");
+            optionsStringBuilder.Append($"<option value=\"{enumItem.Key}\">{enumItem.Value}</option>");
         }
         return optionsStringBuilder.ToString();
     }
