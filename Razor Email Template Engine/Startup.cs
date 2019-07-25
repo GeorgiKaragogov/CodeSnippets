@@ -1,11 +1,11 @@
-﻿    public class Startup
+﻿public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
     {
-        public void ConfigureServices(IServiceCollection services)
+        services.Configure<RazorViewEngineOptions>(options =>
         {
-            services.Configure<RazorViewEngineOptions>(options =>
-            {
-                options.ViewLocationFormats.Clear();
-                options.ViewLocationFormats.Add("/Emails/Views/{0}" + RazorViewEngine.ViewExtension);
-            });
-        }
+            options.ViewLocationFormats.Clear();
+            options.ViewLocationFormats.Add("/Emails/Views/{0}" + RazorViewEngine.ViewExtension);
+        });
     }
+}
